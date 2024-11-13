@@ -34,7 +34,7 @@ namespace Application.BLL.Helper
         {
             CreateMap<Discounts, DiscountDataDto>();
                 //.ForMember(dest => dest.products, src => src.MapFrom(s => s.products));
-            CreateMap<Discounts, DiscountCreateDto>();
+            CreateMap<Discounts, DiscountCreateDto>().ReverseMap();
         }
         public void CreateProductMaps()
         {

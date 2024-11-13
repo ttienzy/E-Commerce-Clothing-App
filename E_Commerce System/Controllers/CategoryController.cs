@@ -70,9 +70,9 @@ namespace E_Commerce_System.Controllers
             return new ErrorResponse<string>().Error(data);
         }
         [HttpDelete("RequirementCategory")]
-        public async Task<IActionResult> DeleteCategory([FromQuery] Guid productId)
+        public async Task<IActionResult> DeleteCategory([FromQuery] Guid id)
         {
-            var data = await _categoryServices.DeleteCategory(productId);
+            var data = await _categoryServices.DeleteCategory(id);
             if (data.success)
             {
                 return Ok(data);

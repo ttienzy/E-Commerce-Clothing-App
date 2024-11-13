@@ -1,6 +1,7 @@
 ﻿using Application.BLL.PaymentServices.PayContracts;
 using Application.DAL.Shared.Base;
 using Application.DAL.Shared.PaymentModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,6 +34,7 @@ namespace E_Commerce_System.Controllers
             return new ErrorResponse<PaymentResponseModel>().Error(result);
         }
 
+        [Authorize(Roles = "User")]
         [HttpPost]
         public async Task<IActionResult> CreatePaymentUrl([FromBody]ImfomationOrderCreate model)
         {

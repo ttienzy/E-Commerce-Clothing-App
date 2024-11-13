@@ -68,24 +68,17 @@ namespace Application.BLL.Services
             }
         }
 
-        public async Task<BaseResponse<string>> DeleteDiscount(Guid ProductId)
+        public async Task<BaseResponse<string>> DeleteDiscount(Guid id)
         {
             try
             {
-                var product = await _unitOfWork.tb_Products.FindByIdAsync(ProductId);
-                if (product is null)
-                {
-                    return new BaseResponse<string>().NotFound(ErrorMessage.NOT_FOUND_PRODUCT);
-                }
-                var discount = await _unitOfWork.tb_Discounts.FindByIdAsync(product.DiscountId ?? Guid.NewGuid());
+                var discount = await _unitOfWork.tb_Discounts.FindByIdAsync(id);
                 if (discount is null)
                 {
-                    return new BaseResponse<string>().Success(ErrorMessage.PRODUCT_NOT_DISCOUNT);
+                    return new BaseResponse<string>().Success(ErrorMessage.RECORD_NOT_FOUND);
                 }
 
-                product.DiscountId = null;
-                discount.Active = false;
-                _unitOfWork.tb_Products.Update(product);
+                _unitOfWork.tb_Discounts.Delete(discount);
                 await _unitOfWork.SaveChangeAsync();
                 return new BaseResponse<string>().Success("DeleteDiscount");
             }

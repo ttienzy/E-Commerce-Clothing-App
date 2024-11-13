@@ -47,7 +47,11 @@ namespace Application.BLL.PaymentServices.PayServices
                     QuantityProductOrder = model.Quantity,
                     Price = model.Amount,
                 };
-                _memoryCache.Set("tempraty_OrderItems", tempraty_OrderItems, TimeSpan.FromMinutes(3));
+                
+                _memoryCache.Set("tempraty_OrderItems", tempraty_OrderItems);
+                _memoryCache.Set("product_id",model.ProductId);
+                _memoryCache.Set("product_quantity", model.Quantity);
+
 
                 pay.AddRequestData("vnp_Version", _configuration["Vnpay:vnp_Version"]);
                 pay.AddRequestData("vnp_Command", _configuration["Vnpay:vnp_Command"]);
@@ -96,19 +100,28 @@ namespace Application.BLL.PaymentServices.PayServices
                     return new BaseResponse<PaymentResponseModel>().Success(response);
                 }
 
+                //var setProduct = await _unitOfWork.tb_Products.FindByIdAsync()
+
                 var newPayment = new OrderPayment
                 {
                     ProviderPayment = "VnPay",
                     Amount = decimal.Parse(response.Amount)/100,
                     CreatedAt = DateTime.Now,
                     OrderId = Guid.Parse(response.OrderId),
-                    OrderInfo = "Đã thanh toán"
+                    OrderInfo = "paid"
                 };
-                
+
+                var setProduct = await _unitOfWork.tb_Products.FindByIdAsync((Guid)_memoryCache.Get("product_id"));
+                setProduct.Quantity -= (int)_memoryCache.Get("product_quantity");
+
+                _unitOfWork.tb_Products.Update(setProduct);
                 await _unitOfWork.tb_OrderPayments.AddAsync(newPayment);
                 await _unitOfWork.tb_OrderItems.AddAsync((OrderItems)_memoryCache.Get("tempraty_OrderItems"));
                 await _unitOfWork.SaveChangeAsync();
 
+                _memoryCache.Remove("tempraty_OrderItems");
+                _memoryCache.Remove("product_id");
+                _memoryCache.Remove("product_quantity");
                 return new BaseResponse<PaymentResponseModel>().Success(response);
             }
             catch (Exception ex)

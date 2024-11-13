@@ -5,38 +5,19 @@ D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\E_Commerce System
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\E_Commerce System.runtimeconfig.json
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\E_Commerce System.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\E_Commerce System.pdb
-D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.OpenApi.dll
-D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.csproj.AssemblyReference.cache
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.GeneratedMSBuildEditorConfig.editorconfig
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.AssemblyInfoInputs.cache
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.AssemblyInfo.cs
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.csproj.CoreCompileInputs.cache
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.MvcApplicationPartsAssemblyInfo.cache
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets.build.json
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets.development.json
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets\msbuild.E_Commerce System.Microsoft.AspNetCore.StaticWebAssets.props
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets\msbuild.build.E_Commerce System.props
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.E_Commerce System.props
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.E_Commerce System.props
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets.pack.json
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\scopedcss\bundle\E_Commerce System.styles.css
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.csproj.CopyComplete
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.dll
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\refint\E_Commerce System.dll
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.pdb
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.genruntimeconfig.cache
-D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\ref\E_Commerce System.dll
+D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\AutoMapper.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Azure.Core.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Azure.Identity.dll
+D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\CloudinaryDotNet.dll
+D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\dotenv.net.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Humanizer.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -53,6 +34,7 @@ D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.EntityF
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
@@ -64,11 +46,15 @@ D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.Identit
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.OpenApi.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Mono.TextTemplating.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\System.CodeDom.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\System.Composition.Convention.dll
@@ -152,9 +138,25 @@ D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Application.BLL.d
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Application.DAL.dll
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Application.BLL.pdb
 D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Application.DAL.pdb
-D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\AutoMapper.dll
-D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\CloudinaryDotNet.dll
-D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\dotenv.net.dll
-D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
-D:\CSharp\E_Commerce System\E_Commerce System\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.csproj.AssemblyReference.cache
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.GeneratedMSBuildEditorConfig.editorconfig
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.AssemblyInfoInputs.cache
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.AssemblyInfo.cs
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.csproj.CoreCompileInputs.cache
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.MvcApplicationPartsAssemblyInfo.cs
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.MvcApplicationPartsAssemblyInfo.cache
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.sourcelink.json
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets.build.json
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets.development.json
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets\msbuild.E_Commerce System.Microsoft.AspNetCore.StaticWebAssets.props
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets\msbuild.build.E_Commerce System.props
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.E_Commerce System.props
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.E_Commerce System.props
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\staticwebassets.pack.json
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\scopedcss\bundle\E_Commerce System.styles.css
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.csproj.CopyComplete
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.dll
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\refint\E_Commerce System.dll
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.pdb
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\E_Commerce System.genruntimeconfig.cache
+D:\CSharp\E_Commerce System\E_Commerce System\obj\Debug\net8.0\ref\E_Commerce System.dll

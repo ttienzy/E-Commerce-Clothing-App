@@ -70,25 +70,19 @@ namespace Application.BLL.Services
             }
         }
 
-        public async Task<BaseResponse<string>> DeleteCategory(Guid productId)
+        public async Task<BaseResponse<string>> DeleteCategory(Guid id)
         {
             try
             {
-                var product = await _unitOfWork.tb_Products.FindByIdAsync(productId);
-                if (product is null)
-                {
-                    return new BaseResponse<string>().NotFound(ErrorMessage.NOT_FOUND_PRODUCT);
-                }
-                var category = await _unitOfWork.tb_Categories.FindByIdAsync(product.CategoryId ?? Guid.NewGuid());
+                var category = await _unitOfWork.tb_Categories.FindByIdAsync(id);
                 if (category is null)
                 {
-                    return new BaseResponse<string>().Success(ErrorMessage.PRODUCT_NOT_DISCOUNT);
+                    return new BaseResponse<string>().Success(ErrorMessage.RECORD_NOT_FOUND);
                 }
-
-                product.CategoryId = null;
-                _unitOfWork.tb_Products.Update(product);
+                _unitOfWork.tb_Categories.Delete(category);
+                
                 await _unitOfWork.SaveChangeAsync();
-                return new BaseResponse<string>().Success("Delete Category for this products");
+                return new BaseResponse<string>().Success("Delete Category success");
             }
             catch (Exception ex)
             {

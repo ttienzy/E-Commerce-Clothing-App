@@ -15,7 +15,7 @@ namespace Application.DAL.Shared.Dtos.DiscountDto
         public decimal? Discount_percent { get; set; }
         //public bool? Active { get; set; }
         //public DateTime? CreateAt { get; set; }
-        //public DateTime? UpdateAt { get; set; }
+        public DateTime? UpdateAt { get; set; }
         //public List<ProductDiscountDto> products { get; set; }
     }
 }

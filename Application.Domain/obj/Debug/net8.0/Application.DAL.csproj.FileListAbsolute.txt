@@ -1,11 +1,12 @@
+D:\CSharp\E_Commerce System\Application.Domain\bin\Debug\net8.0\Application.DAL.deps.json
+D:\CSharp\E_Commerce System\Application.Domain\bin\Debug\net8.0\Application.DAL.dll
+D:\CSharp\E_Commerce System\Application.Domain\bin\Debug\net8.0\Application.DAL.pdb
 D:\CSharp\E_Commerce System\Application.Domain\obj\Debug\net8.0\Application.DAL.csproj.AssemblyReference.cache
 D:\CSharp\E_Commerce System\Application.Domain\obj\Debug\net8.0\Application.DAL.GeneratedMSBuildEditorConfig.editorconfig
 D:\CSharp\E_Commerce System\Application.Domain\obj\Debug\net8.0\Application.DAL.AssemblyInfoInputs.cache
 D:\CSharp\E_Commerce System\Application.Domain\obj\Debug\net8.0\Application.DAL.AssemblyInfo.cs
 D:\CSharp\E_Commerce System\Application.Domain\obj\Debug\net8.0\Application.DAL.csproj.CoreCompileInputs.cache
-D:\CSharp\E_Commerce System\Application.Domain\bin\Debug\net8.0\Application.DAL.deps.json
-D:\CSharp\E_Commerce System\Application.Domain\bin\Debug\net8.0\Application.DAL.dll
-D:\CSharp\E_Commerce System\Application.Domain\bin\Debug\net8.0\Application.DAL.pdb
+D:\CSharp\E_Commerce System\Application.Domain\obj\Debug\net8.0\Application.DAL.sourcelink.json
 D:\CSharp\E_Commerce System\Application.Domain\obj\Debug\net8.0\Application.DAL.dll
 D:\CSharp\E_Commerce System\Application.Domain\obj\Debug\net8.0\refint\Application.DAL.dll
 D:\CSharp\E_Commerce System\Application.Domain\obj\Debug\net8.0\Application.DAL.pdb
