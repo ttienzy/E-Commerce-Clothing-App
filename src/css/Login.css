@@ -1,0 +1,118 @@
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.auth-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-input {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.form-input:focus {
+    border-color: #4A90E2;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74,144,226,0.2);
+}
+
+.auth-button {
+    background: #4A90E2;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 500;
+}
+
+.auth-button:hover {
+    background: #357ABD;
+}
+
+.auth-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.auth-link {
+    color: #4A90E2;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.auth-link:hover {
+    color: #053d74;
+
+}
+.error-form{
+    font-size: small;
+    color: red;
+    margin-left: 6px;
+}
+
+/* Custom styles for Register form */
+.register-form .UserAddress-Provider {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+    margin-top: 10px;
+    background: #f9f9f9;
+}
+
+/* Custom styles for Reset Password form */
+.reset-form .form-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+    .homepage-container {
+        flex-direction: column;
+    }
+    
+    .content-section,
+    .auth-section {
+        padding: 20px;
+    }
+    
+    .content-section {
+        min-height: 50vh;
+    }
+}

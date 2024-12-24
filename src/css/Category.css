@@ -1,0 +1,182 @@
+.form-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-header {
+    padding: 16px 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .form-header h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .header-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .parameters-section {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .parameters-section h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .no-params {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .request-body-section {
+    padding: 16px 20px;
+  }
+  
+  .request-body-section h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .format-selector {
+    margin-bottom: 20px;
+  }
+  
+  .format-selector select {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+  }
+  
+  .product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .input-wrapper input[type="text"],
+  .input-wrapper input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .input-wrapper input[type="number"] {
+    -moz-appearance: textfield; 
+    -webkit-appearance: none; 
+    appearance: none; 
+  }
+  
+  .input-wrapper input[type="number"]::-webkit-outer-spin-button,
+  .input-wrapper input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .file-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .file-select-btn {
+    padding: 6px 12px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .file-select-btn:hover {
+    background: #f0f0f0;
+  }
+  
+  .file-name {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .empty-value-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .empty-value-checkbox label {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .btn-primary {
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn-primary:hover {
+    background: #0056b3;
+  }
+  
+  .btn-secondary {
+    padding: 8px 16px;
+    background: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn-secondary:hover {
+    background: #f0f0f0;
+  }
