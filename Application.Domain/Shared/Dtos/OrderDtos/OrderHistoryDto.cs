@@ -8,6 +8,7 @@ namespace Application.DAL.Shared.Dtos.OrderDtos
 {
     public class OrderHistoryDto
     {
+        public Guid PaymentId { get; set; }
         public Guid OrderId { get; set; }
         public int Quantity { get; set; }
         public decimal TotalMoney { get; set; }

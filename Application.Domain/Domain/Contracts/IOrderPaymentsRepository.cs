@@ -1,4 +1,5 @@
 ﻿using Application.DAL.Domain.Models;
+using Application.DAL.Shared.Dtos.OrderDtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,7 @@ namespace Application.DAL.Domain.Contracts
 {
     public interface IOrderPaymentsRepository : IGenericRepository<OrderPayment>
     {
+        Task<int> GetCountUnPaidById(Guid idUser);
+        Task<List<OrderHistoryDto>> CheckOrderStatus();
     }
 }

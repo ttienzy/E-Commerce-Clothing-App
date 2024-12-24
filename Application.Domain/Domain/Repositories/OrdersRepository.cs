@@ -23,7 +23,7 @@ namespace Application.DAL.Domain.Repositories
                         join payment in _context.orderPayment on order.Id equals payment.OrderId
                         join orderitem in _context.orderItems on order.Id equals orderitem.OrderId
                         join product in _context.products on orderitem.ProductId equals product.Id
-                        where order.UserId == client_id
+                        where order.UserId == client_id 
 
                         select new OrderHistoryDto
                         {
@@ -38,13 +38,55 @@ namespace Application.DAL.Domain.Repositories
             return query.AsQueryable();
             
         }
+        public IQueryable<OrderHistoryDto> ListOrderIncludeUnPaid(Guid client_id)
+        {
+            var query = from order in _context.orders
+                        join payment in _context.orderPayment on order.Id equals payment.OrderId
+                        join orderitem in _context.orderItems on order.Id equals orderitem.OrderId
+                        join product in _context.products on orderitem.ProductId equals product.Id
+                        where order.UserId == client_id && (payment.OrderInfo == "unpaid" || payment.OrderInfo == "paid" || payment.OrderInfo == "confirmed")
+
+                        select new OrderHistoryDto
+                        {
+                            PaymentId = payment.Id,
+                            OrderId = order.Id,
+                            Quantity = orderitem.QuantityProductOrder,
+                            TotalMoney = order.TotalOrderMoney,
+                            CreatedAt = order.CreatedAt,
+                            ProductName = product.Name,
+                            UrlImage = product.ImageProducts,
+                            Status = payment.OrderInfo
+                        };
+            return query.AsQueryable();
+
+        }
+        public async Task<List<OrderHistoryDto>> ListOrderIncludeAllStatus()
+        {
+            var query = from order in _context.orders
+                        join payment in _context.orderPayment on order.Id equals payment.OrderId
+                        join orderitem in _context.orderItems on order.Id equals orderitem.OrderId
+                        join product in _context.products on orderitem.ProductId equals product.Id
+                        where payment.OrderInfo != "received"
+                        select new OrderHistoryDto
+                        {
+                            PaymentId = payment.Id,
+                            OrderId = order.Id,
+                            Quantity = orderitem.QuantityProductOrder,
+                            TotalMoney = order.TotalOrderMoney,
+                            CreatedAt = order.CreatedAt,
+                            ProductName = product.Name,
+                            UrlImage = product.ImageProducts,
+                            Status = payment.OrderInfo
+                        };
+            return await query.ToListAsync();
+        }
         public  Task<List<OrderHistoryDto>> ListOrderPreview(Guid client_id)
         {
             var query = from order in _context.orders
                         join payment in _context.orderPayment on order.Id equals payment.OrderId
                         join orderitem in _context.orderItems on order.Id equals orderitem.OrderId
                         join product in _context.products on orderitem.ProductId equals product.Id
-                        where order.UserId == client_id && order.Description == "" && payment.OrderInfo == "paid"
+                        where order.UserId == client_id && payment.OrderInfo == "received"
 
                         select new OrderHistoryDto
                         {
@@ -66,13 +108,12 @@ namespace Application.DAL.Domain.Repositories
                 .Select(g => new RevenueDto
                 {
                     Month = g.Key.Month,
-                    TotalOrders = g.Count(),
                     Revenue = g.Sum(order => order.TotalOrderMoney),
-                    Profit = g.Sum(order => order.TotalOrderMoney) * 0.3m
                 })
                 .OrderBy(x => x.Month)
                 .ToListAsync();
             return result;
         }
+        
     }
 }

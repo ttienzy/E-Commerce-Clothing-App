@@ -1,4 +1,5 @@
 ﻿using Application.DAL.Domain.Models;
+using Application.DAL.Shared.Dtos.ManagerDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,7 @@ namespace Application.DAL.Domain.Contracts
         /// <param name="TelNo"></param>
         /// <returns></returns>
         Task<Providers?> FindByTelNoAsync(string TelNo);
+        Task<ManagerInfoDto> InfoForManager();
+        Task<List<BestSellingProduct>> SoftByBestSellingProduct();
     }
 }

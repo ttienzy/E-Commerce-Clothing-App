@@ -19,5 +19,6 @@ namespace Application.BLL.Contracts.IAuthenticationServices
         Task<BaseResponse<string>> ResetPassword(string newpassword);
         //Task<BaseResponse<RefreshTokenDto>> Refresh(RefreshTokenDto refreshTokenDTO);
         Task<BaseResponse<ApplicationUser?>> ListInfoUser(Guid client_id);
+        Task<BaseResponse<string>> SetInfo(Guid UserId, SetInfoDto setInfoDto);
     }
 }

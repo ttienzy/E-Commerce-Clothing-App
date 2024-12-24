@@ -84,6 +84,13 @@ namespace E_Commerce_System.Controllers
             return new ErrorResponse<ApplicationUser>().Error(data);
         }
 
+        [HttpPut("SetInfo")]
+        public async Task<IActionResult> SetInfo([FromQuery] Guid UserId,[FromBody] SetInfoDto setInfoDto)
+        {
+            var data = await _authen.SetInfo(UserId, setInfoDto);
+            if (data.success) return Ok(data.response);
+            return BadRequest(data);
+        }
 
 
 
@@ -97,16 +104,15 @@ namespace E_Commerce_System.Controllers
 
 
 
-
-        [Authorize(Roles = "User")]
-        [HttpGet("demo01")]
+        //[Authorize(Roles = "User")]
+        [HttpPost("demo01")]
         public IActionResult demo01()
         {
             return Ok("This is user role");
         }
 
-        [Authorize(Roles = "Admin")]
-        [HttpGet("demo02")]
+        //[Authorize(Roles = "Admin")]
+        [HttpDelete("demo02")]
         public IActionResult demo02()
         {
             return Ok("This is user role");

@@ -89,6 +89,9 @@ builder.Services.AddScoped<IAuthentication, AuthenticationServices>();
 builder.Services.AddScoped<IAddressUserServices, AddressUserServices>();
 builder.Services.AddScoped<IOrderInvoiceServices, OrderInvoiceServices>();
 builder.Services.AddScoped<IVnPayService, VnPayService>();
+builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IPaymentServices, PaymentServices>();
+builder.Services.AddScoped<IPageManagers, PageManagers>();
 
 builder.Services.AddCors(options =>
 {

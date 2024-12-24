@@ -21,6 +21,7 @@ namespace Application.DAL.Domain.Contracts
         IReceiptsRepository tb_Receipts { get; }
         IReceiptItemsRepository tb_ReceiptsItems { get; }
         IUserAddressRepository tb_UserAddress { get; }
+        ICartRepository tb_Cart { get; }
         Task<IDbContextTransaction> BeginTransactionAsync();
         Task<bool> SaveChangeAsync();
     }

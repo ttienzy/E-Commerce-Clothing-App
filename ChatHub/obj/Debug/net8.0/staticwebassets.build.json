@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "SA7m/+uIAVcAw73AcHwB6whA5KLtDN967GibG0wHKC4=",
+  "Hash": "rMSINHfVZxcwuLS1npwPkjtfYydbWPr6MN7xnCZSZyg=",
   "Source": "ChatHub",
   "BasePath": "_content/ChatHub",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

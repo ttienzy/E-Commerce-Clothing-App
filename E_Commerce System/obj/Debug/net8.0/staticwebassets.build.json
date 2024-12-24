@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "4DMyK4rhGMFTTvYBbj2CgdOr8hQ7VPcV3Nftj5S1Wjo=",
+  "Hash": "U40P3e9j9QefxvCqL9RwNZmJpCcUroZhhBUcd9ODPa4=",
   "Source": "E_Commerce System",
   "BasePath": "_content/E_Commerce System",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

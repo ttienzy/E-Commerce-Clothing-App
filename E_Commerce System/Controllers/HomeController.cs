@@ -1,4 +1,5 @@
-﻿using Application.BLL.PaymentServices.PayContracts;
+﻿using Application.BLL.Contracts;
+using Application.BLL.PaymentServices.PayContracts;
 using Application.DAL.Shared.Base;
 using Application.DAL.Shared.PaymentModels;
 using Microsoft.AspNetCore.Authorization;
@@ -12,10 +13,11 @@ namespace E_Commerce_System.Controllers
     public class HomeController : ControllerBase
     {
         private readonly IVnPayService _vnPayService;
-
-        public HomeController(IVnPayService vnPayService)
+        private readonly IPaymentServices _paymentServices;
+        public HomeController(IVnPayService vnPayService, IPaymentServices paymentServices)
         {
             _vnPayService = vnPayService;
+            _paymentServices = paymentServices;
         }
 
         [HttpGet("PaymentCallback")]
@@ -43,6 +45,15 @@ namespace E_Commerce_System.Controllers
             if(result.success)
                 return Ok(new { url = result.response });
             return new ErrorResponse<string>().Error(result);
+        }
+
+        [HttpPut("CacelledPayment")]
+        public async Task<IActionResult> CacelledPayment([FromQuery] Guid IdPayment)
+        {
+            var data = await _paymentServices.CaceledPayment(IdPayment);
+            if(data.success)
+                return Ok(data.response);
+            return new ErrorResponse<string>().Error(data);
         }
     }
 }

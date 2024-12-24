@@ -28,6 +28,26 @@ namespace E_Commerce_System.Controllers
             }
             return new ErrorResponse<PagedList<OrderHistoryDto>>().Error(data);
         }
+        [HttpGet("ListOrderHistoryTradeAsync")]
+        public IActionResult OrderHistoryTrade([FromQuery] Guid client_id)
+        {
+            var data = _orderInvoiceServices.ListOrderHistoryTradeAsync(client_id);
+            if (data.success)
+            {
+                return Ok(data.response);
+            }
+            return new ErrorResponse<List<OrderHistoryDto>>().Error(data);
+        }
+        [HttpGet("ListOrderForAdmin")]
+        public async Task<IActionResult> ListOrderForAdmin()
+        {
+            var data = await _orderInvoiceServices.ListOrderIncludeAllStatus();
+            if (data.success)
+            {
+                return Ok(data.response);
+            }
+            return new ErrorResponse<List<OrderHistoryDto>>().Error(data);
+        }
         [HttpGet("OrderPreview")]
         public async Task<IActionResult> ListOrderPreviewAsync([FromQuery] Guid client_id)
         {

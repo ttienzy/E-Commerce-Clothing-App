@@ -9,8 +9,8 @@ D:\CSharp\E_Commerce System\Application.BLL\obj\Debug\net8.0\Application.BLL.Ass
 D:\CSharp\E_Commerce System\Application.BLL\obj\Debug\net8.0\Application.BLL.AssemblyInfo.cs
 D:\CSharp\E_Commerce System\Application.BLL\obj\Debug\net8.0\Application.BLL.csproj.CoreCompileInputs.cache
 D:\CSharp\E_Commerce System\Application.BLL\obj\Debug\net8.0\Application.BLL.sourcelink.json
-D:\CSharp\E_Commerce System\Application.BLL\obj\Debug\net8.0\Application.BLL.csproj.CopyComplete
 D:\CSharp\E_Commerce System\Application.BLL\obj\Debug\net8.0\Application.BLL.dll
 D:\CSharp\E_Commerce System\Application.BLL\obj\Debug\net8.0\refint\Application.BLL.dll
 D:\CSharp\E_Commerce System\Application.BLL\obj\Debug\net8.0\Application.BLL.pdb
 D:\CSharp\E_Commerce System\Application.BLL\obj\Debug\net8.0\ref\Application.BLL.dll
+D:\CSharp\E_Commerce System\Application.BLL\obj\Debug\net8.0\Applicat.92487692.Up2Date

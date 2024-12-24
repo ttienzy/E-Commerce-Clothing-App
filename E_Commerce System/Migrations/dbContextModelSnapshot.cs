@@ -97,6 +97,27 @@ namespace E_Commerce_System.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("Application.DAL.Domain.Models.Cart", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("carts");
+                });
+
             modelBuilder.Entity("Application.DAL.Domain.Models.Categories", b =>
                 {
                     b.Property<Guid>("Id")
@@ -240,6 +261,9 @@ namespace E_Commerce_System.Migrations
 
                     b.Property<decimal>("TotalOrderMoney")
                         .HasColumnType("money");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -521,6 +545,25 @@ namespace E_Commerce_System.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Application.DAL.Domain.Models.Cart", b =>
+                {
+                    b.HasOne("Application.DAL.Domain.Models.Products", "product")
+                        .WithMany("carts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Application.DAL.Domain.Models.ApplicationUser", "user")
+                        .WithMany("carts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("product");
+
+                    b.Navigation("user");
+                });
+
             modelBuilder.Entity("Application.DAL.Domain.Models.OrderItems", b =>
                 {
                     b.HasOne("Application.DAL.Domain.Models.Orders", "orders")
@@ -682,6 +725,8 @@ namespace E_Commerce_System.Migrations
                     b.Navigation("address")
                         .IsRequired();
 
+                    b.Navigation("carts");
+
                     b.Navigation("orders");
                 });
 
@@ -710,6 +755,8 @@ namespace E_Commerce_System.Migrations
 
             modelBuilder.Entity("Application.DAL.Domain.Models.Products", b =>
                 {
+                    b.Navigation("carts");
+
                     b.Navigation("orderItems");
 
                     b.Navigation("receiptItems");

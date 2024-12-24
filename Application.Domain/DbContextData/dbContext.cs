@@ -3,11 +3,9 @@ using Application.DAL.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.Common;
+
+
 
 namespace Application.DAL.DbContextData
 {
@@ -26,6 +24,7 @@ namespace Application.DAL.DbContextData
         public DbSet<Providers> providers { get; set; }
         public DbSet<Receipts> receipts { get; set; }
         public DbSet<ReceiptItems> ReceiptItems { get; set; }
+        public DbSet<Cart> carts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -25,6 +25,7 @@ namespace Application.DAL.Domain.Repositories
         private IReceiptsRepository receiptsRepository;
         private IUserAddressRepository userAddressRepository;
         private IApplicationUserRepository applicationUserRepository;
+        private ICartRepository cartRepository;
         public UnitOfWork(dbContext dbContext)
         {
             _context = dbContext;
@@ -51,6 +52,8 @@ namespace Application.DAL.Domain.Repositories
         public IReceiptItemsRepository tb_ReceiptsItems => receiptItemsRepository ??= new ReceiptItemsRepository(_context);
 
         public IUserAddressRepository tb_UserAddress => userAddressRepository ??= new UserAddressRepository(_context);
+
+        public ICartRepository tb_Cart => cartRepository ??= new CartRepository(_context);
 
         public async Task<IDbContextTransaction> BeginTransactionAsync() => await _context.Database.BeginTransactionAsync();
 

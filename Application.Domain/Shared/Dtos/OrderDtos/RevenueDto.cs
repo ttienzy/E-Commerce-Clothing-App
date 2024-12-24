@@ -9,7 +9,6 @@ namespace Application.DAL.Shared.Dtos.OrderDtos
     public class RevenueDto
     {
         public int Month { get; set; }
-        public int TotalOrders { get; set; }
         public decimal Revenue { get; set; }
         public decimal Profit { get; set; }
     }

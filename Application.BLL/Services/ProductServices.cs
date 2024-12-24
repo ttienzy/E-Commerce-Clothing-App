@@ -6,13 +6,9 @@ using Application.DAL.Shared.Base;
 using Application.DAL.Shared.Common;
 using Application.DAL.Shared.Dtos.ProductDto;
 using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 namespace Application.BLL.Services
 {
@@ -110,6 +106,67 @@ namespace Application.BLL.Services
             catch(Exception ex)
             {
                 return new BaseResponse<List<ProductData>>().InternalServerError(ex.Message);
+            }
+        }
+        public async Task<BaseResponse<List<ProductIncludedDiscountDto>>> GetProductByQueryAsync(Guid categoryId,decimal min, decimal max)
+        {
+            try
+            {
+                var query = _unitOfWork.tb_Products.ProductAsQuerryAble();
+                var cate = await _unitOfWork.tb_Categories.FindByIdAsync(categoryId);
+                if (cate is null)
+                {
+                    if (min != 0 && max != 0)
+                    {
+                        var x = _mapper.Map<List<ProductIncludedDiscountDto>>(query.Where(x => x.Price >= min && x.Price <= max).Include(x => x.discounts).ToList());
+                        return new BaseResponse<List<ProductIncludedDiscountDto>>().Success(x);
+                    }
+                }
+                if (min != 0 && max != 0)
+                {
+                    query = query.Include(x => x.categories).Include(x => x.discounts).Where(x => x.categories.Id == categoryId && x.Price >= min && x.Price <= max);
+                    return new BaseResponse<List<ProductIncludedDiscountDto>>().Success(_mapper.Map<List<ProductIncludedDiscountDto>>(query.ToList()));
+                }
+                var xy = _mapper.Map<List<ProductIncludedDiscountDto>>(query.Include(x => x.categories).Include(x => x.discounts).Where(x => x.categories.Id == categoryId).ToList());
+                return new BaseResponse<List<ProductIncludedDiscountDto>>().Success(xy);
+            }
+            catch(Exception ex)
+            {
+                return new BaseResponse<List<ProductIncludedDiscountDto>>().InternalServerError(ex.Message);
+            }
+        }
+        public async Task<BaseResponse<string>> UpdateProduct(Guid idProduct, ProductUpdateDto productUpdateDto)
+        {
+            try
+            {
+                var product = await _unitOfWork.tb_Products.FindByIdAsync(idProduct);
+                if (product is null)
+                    return new BaseResponse<string>().NotFound("Not found");
+                product.Name = productUpdateDto.Name;
+                product.Quantity = productUpdateDto.Quantity;
+                product.Price = productUpdateDto.Price;
+                product.DiscountId = productUpdateDto.DiscountId;
+
+                _unitOfWork.tb_Products.Update(product);
+                await _unitOfWork.SaveChangeAsync();
+
+                return new BaseResponse<string>().Success("Success");
+            }
+            catch(Exception ex)
+            {
+                return new BaseResponse<string>().InternalServerError(ex.Message);
+            }
+        }
+        public async Task<BaseResponse<List<PreviewDto>>> NumberReview(string nameProduct)
+        {
+            try
+            {
+                var results = await _unitOfWork.tb_Products.NumberPreview(nameProduct);
+                return new BaseResponse<List<PreviewDto>>().Success(results);
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<List<PreviewDto>>().InternalServerError(ex.Message);
             }
         }
     }

@@ -29,9 +29,13 @@ D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\staticwebassets\msbuild.bui
 D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ChatHub.props
 D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\staticwebassets.pack.json
 D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\scopedcss\bundle\ChatHub.styles.css
-D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\ChatHub.csproj.CopyComplete
 D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\ChatHub.dll
 D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\refint\ChatHub.dll
 D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\ChatHub.pdb
 D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\ChatHub.genruntimeconfig.cache
 D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\ref\ChatHub.dll
+D:\CSharp\E_Commerce System\ChatHub\bin\Debug\net8.0\ChatHub.staticwebassets.endpoints.json
+D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\staticwebassets\msbuild.ChatHub.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\CSharp\E_Commerce System\ChatHub\obj\Debug\net8.0\ChatHub.csproj.Up2Date

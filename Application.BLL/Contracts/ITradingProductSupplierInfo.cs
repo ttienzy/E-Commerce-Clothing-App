@@ -1,5 +1,6 @@
 ﻿using Application.DAL.Shared.Base;
 using Application.DAL.Shared.Dtos.InfoProviderDto;
+using Application.DAL.Shared.Dtos.ProductDto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,8 @@ namespace Application.BLL.Contracts
         Task<BaseResponse<ProviderDataDto?>> FindProviderAsync(string PhoneNumber);
         Task<BaseResponse<InfoTransactionProviderDto>> TransactionProviderAsync(InfoTransactionProviderDto infoTransactionProviderDto);
         Task<BaseResponse<List<ProviderDataDto>>> SearchProviderByNameAsync(string nameProvider);
+        Task<BaseResponse<string>> TransactionClient(ProductShipDto productShipDto);
+        Task<BaseResponse<string>> CancelOrder(Guid paymentId);
+        Task<BaseResponse<int>> PaymentUnPaidById(Guid UserId);
     }
 }

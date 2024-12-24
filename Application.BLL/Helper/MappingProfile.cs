@@ -1,5 +1,6 @@
 ﻿using Application.DAL.Domain.Models;
 using Application.DAL.Shared.Dtos.AddressDto;
+using Application.DAL.Shared.Dtos.CartDTO;
 using Application.DAL.Shared.Dtos.CategoryDto;
 using Application.DAL.Shared.Dtos.DiscountDto;
 using Application.DAL.Shared.Dtos.InfoProviderDto;
@@ -24,6 +25,7 @@ namespace Application.BLL.Helper
             CreateInventoryMaps();
             CreateCategoryMaps();
             CreateAddressMaps();
+            CreateCartMaps();
         }
         public void CreateProviderMaps()
         {
@@ -58,6 +60,10 @@ namespace Application.BLL.Helper
         {
             CreateMap<UserAddress, AddAdressUserDto>().ReverseMap();
             CreateMap<UserAddress, AddressUserData>().ReverseMap();
+        }
+        public void CreateCartMaps()
+        {
+            CreateMap<Cart,AddCartDto>().ReverseMap();  
         }
     }
 }

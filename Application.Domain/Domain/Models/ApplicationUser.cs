@@ -13,6 +13,7 @@ namespace Application.DAL.Domain.Models
         public DateTime Modified_At { get; set; }
         public UserAddress address { get; set; }
         public List<Orders> orders { get; set; }
+        public List<Cart> carts { get; set; }
 
         public ApplicationUser()
         {

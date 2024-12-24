@@ -11,7 +11,9 @@ namespace Application.DAL.Domain.Contracts
     public interface IOrdersRepository : IGenericRepository<Orders>
     {
         IQueryable<OrderHistoryDto> ListOrderInclude(Guid client_id);
+        IQueryable<OrderHistoryDto> ListOrderIncludeUnPaid(Guid client_id);
         Task<List<OrderHistoryDto>> ListOrderPreview(Guid client_id);
         Task<List<RevenueDto>> RevenueInfo();
+        Task<List<OrderHistoryDto>> ListOrderIncludeAllStatus();
     }
 }

@@ -2,11 +2,13 @@
 using Application.DAL.Shared.Base;
 using Application.DAL.Shared.Common;
 using Application.DAL.Shared.Dtos.InfoProviderDto;
+using Application.DAL.Shared.Dtos.ProductDto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Http.Metadata;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Diagnostics;
 
 namespace E_Commerce_System.Controllers
 {
@@ -73,7 +75,36 @@ namespace E_Commerce_System.Controllers
             }
             return new ErrorResponse<InfoTransactionProviderDto>().Error(results);
         }
-
+        [HttpGet("GetCountUnPaid")]
+        public async Task<IActionResult> PaymentUnPaidById([FromQuery] Guid idUser)
+        {
+            var data = await _productSupplierInfo.PaymentUnPaidById(idUser);
+            if (data.success)
+            {
+                return Ok(data.response);
+            }
+            return new ErrorResponse<int>().Error(data);
+        }
+        [HttpPost("PurchaseProduct")]
+        public async Task<IActionResult> PurchaseProduct([FromBody] ProductShipDto productShipDto)
+        {
+            var data = await _productSupplierInfo.TransactionClient(productShipDto);
+            if (data.success)
+            {
+                return Ok(data);
+            }
+            return new ErrorResponse<string>().Error(data);
+        }
+        [HttpPut("CanceledProduct")]
+        public async Task<IActionResult> CanceledProduct([FromQuery] Guid idPayment)
+        {
+            var data = await _productSupplierInfo.CancelOrder(idPayment);
+            if (data.success)
+            {
+                return Ok(data);
+            }
+            return new ErrorResponse<string>().Error(data);
+        }
         [HttpPut("Provider/update")]
         public async Task<IActionResult> UpdateProviderAsync([FromQuery] string PhoneNumber)
         {

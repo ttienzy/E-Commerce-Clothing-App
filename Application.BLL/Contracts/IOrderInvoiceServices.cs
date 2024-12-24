@@ -16,8 +16,10 @@ namespace Application.BLL.Contracts
     {
 
         BaseResponse<PagedList<OrderHistoryDto>> ListOrderHistoryAsync(int pageNumber, int pageSize, Guid clien_id);
+        BaseResponse<List<OrderHistoryDto>> ListOrderHistoryTradeAsync(Guid client_id);
         Task<BaseResponse<List<OrderHistoryDto>>> ListOrderPreviewAsync(Guid clien_id);
         Task<BaseResponse<Orders>> AddReviewAsync(Guid orderId,string des);
         Task<BaseResponse<List<RevenueDto>>> RevenueInfo();
+        Task<BaseResponse<List<OrderHistoryDto>>> ListOrderIncludeAllStatus();
     }
 }

@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
+using System.Diagnostics;
 using System.Security.Claims;
 
 
@@ -45,6 +46,26 @@ namespace Application.BLL.Services.AuthenServices
             var random = new Random();
             int digits = random.Next(100000, 999999);
             return digits.ToString();
+        }
+        public async Task<BaseResponse<string>> SetInfo(Guid UserId,SetInfoDto setInfoDto)
+        {
+            try
+            {
+                var user = await _userManager.FindByIdAsync(UserId.ToString());
+                if (user == null) 
+                    return new BaseResponse<string>().NotFound("Not found");
+                user.UserName = setInfoDto.UserName;
+                user.Email = setInfoDto.Email;
+                user.PhoneNumber = setInfoDto.PhoneNumber;
+                user.Modified_At = setInfoDto.UpdatedAt;
+
+                await _userManager.UpdateAsync(user);
+                return new BaseResponse<string>().Success("Success");
+            }
+            catch(Exception ex)
+            {
+                return new BaseResponse<string>().InternalServerError(ex.Message);
+            }
         }
         public async Task<BaseResponse<string>> ForgotPassword(string Email)
         {

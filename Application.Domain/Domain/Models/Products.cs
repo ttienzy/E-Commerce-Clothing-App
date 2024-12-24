@@ -16,6 +16,7 @@ namespace Application.DAL.Domain.Models
         public string? Description { get; set; } = string.Empty;
         public List<OrderItems> orderItems { get; set; }
         public List<ReceiptItems> receiptItems { get; set; }
+        public List<Cart> carts { get; set; }
         public Guid? DiscountId { get; set; }
         public Discounts discounts { get; set; }
         public Guid? InventoryId { get; set; }

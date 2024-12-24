@@ -42,7 +42,7 @@ namespace Application.BLL.Services.AssociationToken
 
             var token = new JwtSecurityToken(
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(10), // Short-lived access token
+                expires: DateTime.UtcNow.AddMinutes(30), // Short-lived access token
                 signingCredentials: signingpredentials
              );
             return new JwtSecurityTokenHandler().WriteToken(token);

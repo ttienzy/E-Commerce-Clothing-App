@@ -9,7 +9,8 @@ namespace Application.DAL.Domain.Models
     public class Orders
     {
         public Guid Id { get; set; }
-        public DateTime CreatedAt { get; set; } 
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
         public decimal TotalOrderMoney { get; set; }
         public string Description { get; set; } = string.Empty;
         public Guid UserId { get; set; }

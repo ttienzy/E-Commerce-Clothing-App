@@ -6,6 +6,7 @@ using Application.DAL.Shared.Base;
 using Application.DAL.Shared.Common;
 using Application.DAL.Shared.Dtos.OrderDtos;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Application.BLL.Services
@@ -51,6 +52,33 @@ namespace Application.BLL.Services
                 return new BaseResponse<PagedList<OrderHistoryDto>>().InternalServerError(ex.Message);
             }
         }
+        public BaseResponse<List<OrderHistoryDto>> ListOrderHistoryTradeAsync(Guid client_id)
+        {
+            try
+            {
+                var template = _unitOfWork.tb_Orders.ListOrderIncludeUnPaid(client_id).OrderByDescending(x => x.CreatedAt);
+                
+                return new BaseResponse<List<OrderHistoryDto>>().Success(template.ToList());
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<List<OrderHistoryDto>>().InternalServerError(ex.Message);
+            }
+        }
+
+        public async Task<BaseResponse<List<OrderHistoryDto>>> ListOrderIncludeAllStatus()
+        {
+            try
+            {
+                var results = await _unitOfWork.tb_Orders.ListOrderIncludeAllStatus();
+                return new BaseResponse<List<OrderHistoryDto>>().Success(results);
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<List<OrderHistoryDto>>().InternalServerError(ex.Message);
+            }
+            
+        }
 
         public async Task<BaseResponse<List<OrderHistoryDto>>> ListOrderPreviewAsync(Guid clien_id)
         {
@@ -81,5 +109,9 @@ namespace Application.BLL.Services
                 return new BaseResponse<List<RevenueDto>>().InternalServerError(ex.Message);
             }
         }
+        //public async Task<IActionResult> ProductReviewByName(string name)
+        //{
+            
+        //}
     }
 }

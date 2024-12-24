@@ -59,7 +59,27 @@ namespace E_Commerce_System.Controllers
             }
             return new ErrorResponse<List<ProductIncludedDiscountDto>>().Error(data);
         }
-
+        
+        [HttpGet("GetProductByQueryAsync")]
+        public async Task<IActionResult> GetProductByQueryAsync([FromQuery]Guid categoryId, [FromQuery] decimal min, [FromQuery] decimal max)
+        {
+            var data = await _productservices.GetProductByQueryAsync(categoryId, min, max);
+            if (data.success)
+            {
+                return Ok(data.response);
+            }
+            return new ErrorResponse<List<ProductIncludedDiscountDto>>().Error(data);
+        }
+        [HttpGet("NumberReview")]
+        public async Task<IActionResult> NumberReview([FromQuery] string nameProduct)
+        {
+            var data = await _productservices.NumberReview(nameProduct);
+            if (data.success)
+            {
+                return Ok(data.response);
+            }
+            return new ErrorResponse<List<PreviewDto>>().Error(data);
+        }
         [HttpDelete("DeleteProduct")]
         public async Task<IActionResult> DeleteProduct([FromQuery] Guid id)
         {
@@ -69,6 +89,14 @@ namespace E_Commerce_System.Controllers
                 return Ok(data);    
             }
             return new ErrorResponse<Products>().Error(data);
+        }
+        [HttpPut("UpdateProduct")]
+        public async Task<IActionResult> UpdateProduct([FromQuery] Guid idProduct, [FromBody] ProductUpdateDto productUpdateDto)
+        {
+            var data = await _productservices.UpdateProduct(idProduct, productUpdateDto);
+            if (data.success)
+                return Ok(data);
+            return new ErrorResponse<string>().Error(data);
         }
     }
 }
